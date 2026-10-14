@@ -157,7 +157,7 @@ namespace урок_4
                         Console.WriteLine("\nНейтралка");
                         Console.ReadLine();
                     }
-                    else if (Temp >0 && Temp < 25)
+                    else if (Temp > 0 && Temp < 25)
                     {
                         Console.WriteLine("\nCool, комфортик");
                         Console.ReadLine();
@@ -191,22 +191,142 @@ namespace урок_4
                 {
                     Console.Clear();
                     Console.WriteLine("Введите целое число:");
+                    int Num = int.Parse(Console.ReadLine());
+                    if (Num % 3 == 0 && Num % 5 == 0)
+                    {
+                        Console.WriteLine("\nДелится и на 3, и на 5");
+                        Console.ReadLine();
+                    }
+                    else if (Num % 3 == 0 && Num % 5 != 0)
+                    {
+                        Console.WriteLine("\nДелится только на 3");
+                        Console.ReadLine();
+                    }
+                    else if (Num % 5 == 0 && Num % 3 != 0)
+                    {
+                        Console.WriteLine("\nДелится только на 5");
+                        Console.ReadLine();
+                    }
+                    else if (Num % 3 != 0 && Num % 5 != 0)
+                    {
+                        Console.WriteLine("\nНе делится ни на 3, ни на 5");
+                        Console.ReadLine();
+                    }
 
                 }
                 else if (X == "8")
                 {
                     Console.Clear();
+                    Console.WriteLine("Который час?(0-23):");
+                    int Hour = int.Parse(Console.ReadLine());
+                    if (Hour >= 0 && Hour <= 5)
+                    {
+                        Console.WriteLine("\nGO SLEEP");
+                        Console.ReadLine();
+                    }
+                    else if (Hour >= 6 && Hour <= 11)
+                    {
+                        Console.WriteLine("\nГутен морген");
+                        Console.ReadLine();
+                    }
+                    else if (Hour >= 12 && Hour <= 17)
+                    {
+                        Console.WriteLine("\nДоброго дня сэр");
+                        Console.ReadLine();
+                    }
+
+                    else if (Hour >= 18 && Hour <= 22)
+                    {
+                        Console.WriteLine("\nДобрый вечер");
+                        Console.ReadLine();
+                    }
+
+                    else if (Hour >= 23)
+                    {
+                        Console.WriteLine("\nНе рыба не мясо, поздно но ещё не вечер");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nТакого не бывает");
+                        Console.ReadLine();
+                    }
 
                 }
                 else if (X == "9")
                 {
                     Console.Clear();
-
+                    Console.WriteLine("Введите длинну первого отрезка:");
+                    int F = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите второго первого отрезка:");
+                    int G = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите третьего первого отрезка:");
+                    int H = int.Parse(Console.ReadLine());
+                    if (F < 0 || G < 0 || H < 0)
+                    {
+                        Console.WriteLine("\nНекорректные данные, длинна не может быть отрицательной");
+                        Console.ReadLine();
+                    }
+                    else if (F + G == H && H + G == F && H + F == G)
+                    {
+                        Console.WriteLine("\nТреугольник возможен");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nТреугольник невозможен");
+                        Console.ReadLine();
+                    }
                 }
                 else if (X == "10")
                 {
                     Console.Clear();
+                    Console.WriteLine("Введите сумму покупки:");
+                    double Buy = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Есть ли у вас карта лояльности?(да/нет)(нет по умолчанию):");
+                    string Loyal = Console.ReadLine();
+                    if (Loyal == "да" || Loyal == "Да")
+                    {
+                        if (Buy < 1000)
+                        {
+                            Buy *= 0.97;
+                            Console.WriteLine($"\nСумма:{Buy}");
+                            Console.ReadLine();
+                        }
+                        else if (Buy >= 1000 && Buy <= 5000)
+                        {
+                            Buy *= 0.92;
+                            Console.WriteLine($"\nСумма:{Buy}");
+                            Console.ReadLine();
+                        }
+                        else if (Buy > 5000)
+                        {
+                            Buy *= 0.87;
+                            Console.WriteLine($"\nСумма:{Buy}");
+                            Console.ReadLine();
 
+                        }
+                        else
+                        {
+                            if (Buy < 1000)
+                            {
+                                Console.WriteLine($"\nСумма:{Buy}");
+                                Console.ReadLine();
+                            }
+                            else if (Buy >= 1000 && Buy <= 5000)
+                            {
+                                Buy *= 0.95;
+                                Console.WriteLine($"\nСумма:{Buy}");
+                                Console.ReadLine();
+                            }
+                            else if (Buy > 5000)
+                            {
+                                Buy *= 0.9;
+                                Console.WriteLine($"\nСумма:{Buy}");
+                                Console.ReadLine();
+                            }
+                        }
+                    }
                 }
             }
         }
