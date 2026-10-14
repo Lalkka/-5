@@ -267,7 +267,7 @@ namespace урок_4
                         Console.WriteLine("\nНекорректные данные, длинна не может быть отрицательной");
                         Console.ReadLine();
                     }
-                    else if (F + G == H && H + G == F && H + F == G)
+                    else if (F + G > H && H + G > F && H + F > G)
                     {
                         Console.WriteLine("\nТреугольник возможен");
                         Console.ReadLine();
